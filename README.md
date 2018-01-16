@@ -1,4 +1,4 @@
-# Social AngularJS App
+# Social Django / AngularJS App
 
 full-Stack "Starter" Application developed with Python, Django, DRF Rest Framework and AngularJS Framework
 
