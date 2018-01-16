@@ -58,7 +58,7 @@ Run `npm install && bower install` to install all front-end dependencies
 
 Run `python manage.py runserver` for serving the Back-End Application
 
-Run Gulp Tasks `gulp angular` and `gulp bowe` to inject all dependencies
+Run Gulp Tasks `gulp angular` and `gulp bower` to inject all dependencies
 
 Run Gulp Tasks `gulp webserver` for serving the Front-End Application
 
