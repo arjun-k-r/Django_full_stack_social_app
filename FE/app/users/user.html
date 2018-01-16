@@ -1,0 +1,130 @@
+<style>
+    .card-media {
+        background-color: #999999;
+    }
+
+    .Box {
+        max-width: 90%;
+        width: 1000px
+    }
+
+    .boxed {
+        width: 1140px
+    }
+
+    .stretch input {
+        width: 100%
+    }
+
+
+</style>
+
+
+<md-content class="md-padding" layout-xs="column" layout="row" layout-align="center center">
+
+
+    <div flex-xs layout="column" class="boxed">
+
+        <md-card>
+
+
+            <md-toolbar class="">
+                <div class="md-toolbar-tools">
+                    <md-button ng-click="ctrl.goToHome()" class="md-icon-button" aria-label="Settings" ng-disabled="">
+                        <md-icon class="fa" md-font-icon="fa-bars fa"></md-icon>
+                    </md-button>
+
+                    <h2 flex md-truncate>Home Page</h2>
+
+                    <div flex="5"></div>
+                    <!--MENU-->
+                    <md-button class="md-icon-button" aria-label="More">
+                        <md-icon class="fa" md-font-icon="fa-ellipsis-v fa"></md-icon>
+                    </md-button>
+                </div>
+            </md-toolbar>
+
+
+            <!--<md-toolbar>-->
+            <!--<div layout-align="center center">-->
+
+            <!--<div flex><h2 class="md-toolbar-tools"><span>Profile</span></h2></div>-->
+            <!--&lt;!&ndash;Home&ndash;&gt;-->
+            <!--<div layout="row" layout-align="">-->
+            <!--<div class="md-subhead">Home Page</div>-->
+            <!--<md-button   ng-click="ctrl.goToHome()" class="md-icon-button" aria-label="Favorite">-->
+
+            <!--<md-icon class="fa" md-font-icon="fa-home fa"></md-icon>-->
+            <!--</md-button>-->
+            <!--</div>-->
+            <!--<div flex="flex"></div>-->
+            <!--</div>-->
+            <!--</md-toolbar>-->
+
+            <md-card-header layout-align="center center">
+                <md-card-avatar style="margin-right:12px">
+                    <img src="http://projectnursery.com/wp-content/pnavatars/round%20logo%20bw%20transparent%20turquoise.png"/>
+                </md-card-avatar>
+                <md-card-header-text>
+                    <span class="md-title">{{ctrl.user.first_name}} {{ctrl.user.last_name}}</span>
+                    <span class="md-subhead">{{ctrl.user.email}}</span>
+
+
+                </md-card-header-text>
+
+
+                <md-card-actions layout="row" layout-align="end center">
+                    <div ng-if="!ctrl.user.followers.length === 0">
+                        <span class="md-subhead">Follow</span>
+                        <md-button class="md-icon-button" aria-label="Favorite">
+                            <md-icon ng-click="ctrl.follow()" class="fa" md-font-icon="fa-heart fa"></md-icon>
+                        </md-button>
+                    </div>
+                    <div ng-if="ctrl.user.followers.length === 0">
+                        <span class="md-subhead">unFollow</span>
+                        <md-button class="md-icon-button" aria-label="Settings">
+                            <md-icon ng-click="ctrl.unFollow()" class="fa" md-font-icon="fa-heart-o fa"></md-icon>
+                        </md-button>
+                    </div>
+                    <div flex></div>
+                    <md-button class="md-icon-button" aria-label="Share">
+                        <md-icon class="fa" md-font-icon="fa-arrow-up fa"></md-icon>
+                    </md-button>
+                    <span class="md-subhead">{{ctrl.user.followers.length; }} Followers</span>
+                    <md-button class="md-icon-button" aria-label="Share">
+                        <md-icon class="fa" md-font-icon="fa-arrow-up fa"></md-icon>
+                    </md-button>
+                    <span class="md-subhead">{{ctrl.user.followed.length;}} Following</span>
+
+                </md-card-actions>
+
+
+            </md-card-header>
+            <img ng-src="https://s-media-cache-ak0.pinimg.com/originals/4a/88/7e/4a887e68509737452a38ba244079b8a0.jpg"
+                 class="md-card-image" alt="Washed Out">
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">La tua bacheca</span>
+                    <span class="md-subhead">Reversed</span>
+                </md-card-title-text>
+                <md-card-icon-actions>
+                    <md-button class="md-icon-button" aria-label="toggle">
+                        <md-icon class="fa" md-font-icon="fa-arrow-up fa"></md-icon>
+                    </md-button>
+                </md-card-icon-actions>
+            </md-card-title>
+        </md-card>
+
+        <md-card>
+            <md-toolbar>
+                <div layout-align="center center">
+                    <div flex><h2 class="md-toolbar-tools"><span>Posts</span></h2></div>
+                    <div flex="flex"></div>
+                </div>
+            </md-toolbar>
+        </md-card>
+        <post-list next-page="ctrl.nextPage" posts="ctrl.posts" user="ctrl.user" load-more="ctrl.Next"></post-list>
+
+
+    </div>
+</md-content>

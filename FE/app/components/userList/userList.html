@@ -1,0 +1,6 @@
+<md-content class="md-padding" layout-xs="column" layout="row">
+    <md-list flex>
+        <user-list-item ng-click="ctrl.toDetail(user)" ng-repeat="user in ctrl.users|filter:ctrl.searchValue" user="user"></user-list-item>
+        <md-divider></md-divider>
+    </md-list>
+</md-content>

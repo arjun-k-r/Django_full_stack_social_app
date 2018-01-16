@@ -1,0 +1,136 @@
+<style>
+    .card-media {
+        background-color: #999999;
+    }
+
+    .boxed {
+        width: 1140px
+    }
+
+    .stretch input {
+        width: 100%
+    }
+
+
+</style>
+
+
+<md-content class="md-padding" layout-xs="column" layout="row" layout-align="center center">
+
+
+    <div flex-xs layout="column" class="boxed">
+
+        <md-card>
+
+            <md-toolbar class="">
+                <div class="md-toolbar-tools">
+                    <md-button class="md-icon-button" aria-label="Settings" ng-disabled="">
+                        <md-icon class="fa" md-font-icon="fa-bars fa"></md-icon>
+                    </md-button>
+
+                    <h2 flex md-truncate>Home Page</h2>
+
+                    <!--FOLLOWING-->
+                    <div layout="row" layout-align="center">
+                        <div layout="row" layout-align="center center">
+                            <div class="md-subhead">{{ctrl.user.followers.length; }} Follower</div>
+                            <md-button class="md-icon-button" aria-label="Favorite">
+                                <md-icon class="fa" md-font-icon="fa-heart-o fa"></md-icon>
+                            </md-button>
+                        </div>
+                        <!--FOLLOWERS-->
+                        <div layout="row" layout-align="center center">
+                            <div class="md-subhead">{{ctrl.user.followed.length; }} Seguiti</div>
+                            <md-button class="md-icon-button" aria-label="Favorite">
+
+                                <md-icon class="fa" md-font-icon="fa-heart fa"></md-icon>
+                            </md-button>
+                        </div>
+
+                        <!--SEARCH USERS-->
+                        <div layout="row" layout-align="center center">
+                            <div class="md-subhead">Cerca un utente</div>
+                            <md-button  ng-click="ctrl.goToSearch()" class="md-icon-button" aria-label="Favorite">
+
+                                <md-icon class="fa" md-font-icon="fa-search fa"></md-icon>
+                            </md-button>
+                        </div>
+
+                    </div>
+                    <div flex="5"></div>
+                    <!--MENU-->
+                    <md-button class="md-icon-button" aria-label="More">
+                        <md-icon class="fa" md-font-icon="fa-ellipsis-v fa"></md-icon>
+                    </md-button>
+                </div>
+            </md-toolbar>
+
+            <md-card-header>
+
+                <md-card-avatar style="margin-right:12px">
+                    <img src="http://projectnursery.com/wp-content/pnavatars/round%20logo%20bw%20transparent%20turquoise.png"/>
+                </md-card-avatar>
+                <md-card-header-text>
+                    <span class="md-title">{{ctrl.user.first_name}} {{ctrl.user.last_name}}</span>
+                    <span class="md-subhead">{{ctrl.user.email}}</span>
+                </md-card-header-text>
+
+
+            </md-card-header>
+
+            <div flex></div>
+
+            <img ng-src="https://s-media-cache-ak0.pinimg.com/originals/4a/88/7e/4a887e68509737452a38ba244079b8a0.jpg"
+                 class="md-card-image" alt="Washed Out">
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">La tua bacheca</span>
+                    <span class="md-subhead">Reversed</span>
+                </md-card-title-text>
+                <md-card-icon-actions>
+                    <md-button class="md-icon-button" aria-label="toggle">
+                        <md-icon class="fa" md-font-icon="fa-arrow-up fa"></md-icon>
+                    </md-button>
+                </md-card-icon-actions>
+            </md-card-title>
+        </md-card>
+
+
+        <md-card>
+
+            <md-card-header>
+
+                <md-card-avatar style="margin-right:12px">
+                    <img src="http://projectnursery.com/wp-content/pnavatars/round%20logo%20bw%20transparent%20turquoise.png"/>
+                </md-card-avatar>
+                <md-card-header-text>
+                    <span class="md-title">{{ctrl.user.first_name}} {{ctrl.user.last_name}}</span>
+                    <span class="md-subhead">{{ctrl.user.email}}</span>
+                </md-card-header-text>
+
+
+            </md-card-header>
+
+
+            <md-card-content layout="row" layout-xs="column" layout-align="start start">
+
+                <md-input-container style="margin: 0px; display:none;" flex>
+                    <input ng-model="ctrl.post.title" type="text" placeholder="">
+                </md-input-container>
+
+                <md-input-container style="margin: 0px" flex>
+
+                    <input ng-model="ctrl.post.text" type="text" placeholder="A cosa stai pensando, {{ctrl.user.first_name}}?">
+                </md-input-container>
+
+                <div flex></div>
+                <md-button ng-click="ctrl.newPost()" class="md-raised md-primary">Pubblica</md-button>
+            </md-card-content>
+
+        </md-card>
+
+        <post-list next-page="ctrl.nextPage" posts="ctrl.posts" user="ctrl.user" load-more="ctrl.Next"></post-list>
+
+
+    </div>
+</md-content>

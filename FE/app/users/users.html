@@ -1,0 +1,55 @@
+<style>
+    .card-media {
+        background-color: #999999;
+    }
+
+    .boxed {
+        width: 1140px
+    }
+
+    .stretch input {
+        width: 100%
+    }
+
+
+</style>
+
+
+<md-content class="md-padding" layout-xs="column" layout="row" layout-align="center center">
+
+
+    <div flex-xs layout="column" class="boxed">
+
+
+        <md-toolbar layout-align="center">
+            <div class="md-toolbar-tools">
+
+
+
+                <md-button ng-click="ctrl.goToHome()" class="md-icon-button" aria-label="Settings">
+                    <md-icon md-font-icon="fa fa-bars"></md-icon>
+                </md-button>
+
+                <h2 flex md-truncate>Home Page</h2>
+
+                <div flex>
+                    <md-input-container layout="row" layout-align="center">
+                        <input type="text" ng-model="ctrl.searchvalue" placeholder="Cerca utente...">
+                    </md-input-container>
+                </div>
+                <md-button class="md-icon-button" aria-label="Favorite">
+                    <md-icon md-font-icon="fa fa-search"></md-icon>
+                </md-button>
+
+                <md-button class="md-icon-button" aria-label="More">
+                    <md-icon md-font-icon="fa fa-bars-vert"></md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <user-list users="ctrl.users" search-value="ctrl.searchvalue" to-detail="ctrl.goToDetail"></user-list>
+
+
+    </div>
+</md-content>
+

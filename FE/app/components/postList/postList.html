@@ -1,0 +1,4 @@
+<post ng-repeat="post in ctrl.posts" user="ctrl.user" post="post"></post>
+<div layout="row" layout-align="end center">
+    <md-button ng-if="ctrl.nextPage" ng-click="ctrl.loadMore()" class="md-raised md-primary">successivo</md-button>
+</div>
