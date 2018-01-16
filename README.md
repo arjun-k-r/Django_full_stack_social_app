@@ -11,10 +11,12 @@ Postgresql or Mysql (Default Conf is With postgresql)
 
 Postgres defaults settings.py:
 
+`
 'ENGINE': 'django.db.backends.postgresql',
 'NAME': 'social_network',
 'USER': 'postgres',
 'PASSWORD': 'postgres',
+`
 
 
 ## Back-End Setup
